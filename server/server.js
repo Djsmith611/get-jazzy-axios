@@ -1,8 +1,10 @@
 const express = require('express');
 
+
+
 const app = express();
 const PORT = 5001;
-
+app.use(express.json());
 const artistListArray = [
     {
         name: 'Miles Davis',
@@ -45,13 +47,28 @@ const songListArray = [
     },
 ];
 
-app.use(express.static('server/public'));
+
 
 app.get('/artist', (req, res) => {
     res.send(artistListArray);
 });
 
+app.post('/artist',(req, res) =>{
+    res.sendStatus(201);
+    artistListArray.push(req.body);
+});
+
 // TODO - Add GET for songs
+app.get('/song', (req, res) => {
+    res.send(songListArray);
+});
+
+app.post('/song',(req, res) =>{
+    res.sendStatus(201);
+    songListArray.push(req.body);
+});
+
+app.use(express.static('server/public'));
 
 app.listen(PORT, () => {
     console.log('listening on port', PORT)

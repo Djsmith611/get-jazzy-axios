@@ -11,6 +11,25 @@
 <body>
     <h1>Get Jazzy</h1>
 
+    <form id="new-artist">
+        <fieldset>
+            <legend>Add An Artist</legend>
+            <label for="artist-name">Name:</label><input type="text" id="artist-name">
+            <label for="artist-born">Born:</label><input type="number" id="artist-born">
+            <label for="artist-died">Died:</label><input type="number" id="artist-died">
+            <button id="submit-artist">Submit</button> 
+        </fieldset>
+    </form>
+    <form is="new-form">
+        <fieldset>
+            <legend>Add a Song</legend>
+            <label for="song-title">Title:</label><input type="text" id="song-title">
+            <label for="song-artist">Artist:</label><input type="text" id="song-artist">
+            <button id="submit-song">Submit</button>
+        </fieldset>
+    </form>
+
+
     <h2>Famous Jazz Artists</h2>
     <table>
         <thead>
